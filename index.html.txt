@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Matrimonio di Federica & Stefano</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      background-color: #121212;
+      font-family: Arial, sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+    }
+
+    /* Contenitore principale a scorrimento stile smartphone */
+    .invitation-container {
+      width: 100%;
+      max-width: 480px;
+      height: 100vh;
+      overflow-y: scroll;
+      scroll-snap-type: y mandatory;
+      scrollbar-width: none; /* Firefox */
+    }
+
+    .invitation-container::-webkit-scrollbar {
+      display: none; /* Chrome, Safari */
+    }
+
+    /* Card per ciascuna immagine */
+    .page-card {
+      position: relative;
+      width: 100%;
+      height: 100vh;
+      scroll-snap-align: start;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .page-card img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    /* Pulsanti invisibili o semi-trasparenti sovrapposti */
+    .hotspot {
+      position: absolute;
+      cursor: pointer;
+      text-decoration: none;
+      /* Decommenta la riga sotto se vuoi vedere la zona cliccabile durante il test */
+      /* background: rgba(255, 0, 0, 0.3); */
+    }
+
+    /* 1. Pulsante "Entra nella partecipazione" */
+    #btn-enter {
+      bottom: 8%;
+      left: 10%;
+      width: 80%;
+      height: 8%;
+      border-radius: 25px;
+    }
+
+    /* 2. Link Mappa Chiesa */
+    #btn-church-map {
+      top: 58%;
+      left: 10%;
+      width: 80%;
+      height: 30%;
+      border-radius: 15px;
+    }
+
+    /* 3. Link Mappa Villa */
+    #btn-villa-map {
+      top: 60%;
+      left: 10%;
+      width: 80%;
+      height: 25%;
+      border-radius: 15px;
+    }
+
+    /* 4. Pulsanti RSVP (Parteciperò / Non potrò partecipare) */
+    .rsvp-option {
+      left: 15%;
+      width: 70%;
+      height: 6%;
+      border-radius: 10px;
+    }
+
+    #btn-yes {
+      top: 58%;
+    }
+
+    #btn-no {
+      top: 65%;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="invitation-container" id="invitation">
+
+    <!-- FILE 01: Copertina -->
+    <div class="page-card" id="page-01">
+      <img src="01.png" alt="Copertina Federica & Stefano">
+      <a href="#page-02" class="hotspot" id="btn-enter" title="Entra nella partecipazione"></a>
+    </div>
+
+    <!-- FILE 02: Cerimonia -->
+    <div class="page-card" id="page-02">
+      <img src="02.png" alt="Cerimonia - Chiesa dei Santi Pietro e Paolo">
+      <a href="https://maps.google.com/?q=Piazzale+dei+Santi+Pietro+e+Paolo+EUR+Roma" 
+         target="_blank" 
+         class="hotspot" 
+         id="btn-church-map" 
+         title="Apri indicazioni per la Chiesa"></a>
+    </div>
+
+    <!-- FILE 03: Ricevimento -->
+    <div class="page-card" id="page-03">
+      <img src="03.png" alt="Ricevimento - Villa delle Rose">
+      <a href="https://maps.google.com/?q=Villa+delle+Rose+Trigoria+Roma" 
+         target="_blank" 
+         class="hotspot" 
+         id="btn-villa-map" 
+         title="Apri indicazioni per la Villa"></a>
+    </div>
+
+    <!-- FILE 04: RSVP / Conferma Presenza -->
+    <div class="page-card" id="page-04">
+      <img src="04.png" alt="Conferma Presenza">
+      
+      <!-- Sostituisci "393289589064" con il vostro numero di telefono di riferimento -->
+      <a href="https://wa.me/393289589064?text=Ciao!%20Confermo%20con%20piacere%20la%20mia%20presenza%20al%20vostro%20matrimonio!" 
+         target="_blank" 
+         class="hotspot rsvp-option" 
+         id="btn-yes" 
+         title="Parteciperò"></a>
+
+      <a href="https://wa.me/393289589064?text=Ciao!%20Purtroppo%20non%20potrò%20partecipare%20al%20vostro%20matrimonio." 
+         target="_blank" 
+         class="hotspot rsvp-option" 
+         id="btn-no" 
+         title="Non potrò partecipare"></a>
+    </div>
+
+  </div>
+
+</body>
+</html>
