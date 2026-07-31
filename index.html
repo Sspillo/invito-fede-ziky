@@ -134,21 +134,21 @@
       100% { transform: scale(1); box-shadow: 0 0 4px rgba(212, 175, 55, 0.4); }
     }
 
-    /* Posizioni sul LATO SINISTRO dei testi */
+    /* MODIFICHE POSIZIONE ICONE GEOLOCALIZZAZIONE */
     #pin-church {
-      bottom: 12.8%;
-      left: 12%; /* Lato sinistro della scritta Piazzale... */
+      bottom: 14.5%; /* Alzata rispetto a prima */
+      left: 12%;
     }
 
     #pin-villa {
-      bottom: 14.2%;
-      left: 27%; /* Lato sinistro della scritta Trigoria - Roma */
+      bottom: 15.8%; /* Alzata rispetto a prima */
+      left: 20%;   /* Spostata più a sinistra rispetto a prima */
     }
 
-    /* Freccia dorata animata alzata per evitare sovrapposizioni su Android */
+    /* Freccia dorata animata alzata per Android */
     .scroll-arrow-br {
       position: absolute;
-      bottom: 70px; /* Alzata rispetto al bordo inferiore */
+      bottom: 70px;
       right: 25px;
       z-index: 10;
       cursor: pointer;
@@ -193,7 +193,6 @@
       <img src="01.png" class="bg-img" alt="Copertina">
       <a href="#page-02" class="hotspot" id="btn-enter" title="Entra nella partecipazione"></a>
       
-      <!-- Freccia dorata saliscendi in basso a destra -->
       <a href="#page-02" class="scroll-arrow-br" title="Scorri alla pagina successiva">
         <svg viewBox="0 0 24 24">
           <path d="M7.41 8.59L12 13.17l4.59-4.58L18 10l-6 6-6-6z"/>
@@ -205,7 +204,6 @@
     <div class="page-card" id="page-02">
       <img src="02.png" class="bg-img" alt="Cerimonia - Chiesa">
       
-      <!-- Icona geolocalizzazione sul LATO SINISTRO di Piazzale dei... -->
       <div class="geo-pin" id="pin-church">
         <svg viewBox="0 0 24 24">
           <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/>
@@ -218,7 +216,6 @@
          id="btn-church-map" 
          title="Apri indicazioni Google Maps"></a>
 
-      <!-- Freccia dorata saliscendi in basso a destra -->
       <a href="#page-03" class="scroll-arrow-br" title="Scorri alla pagina successiva">
         <svg viewBox="0 0 24 24">
           <path d="M7.41 8.59L12 13.17l4.59-4.58L18 10l-6 6-6-6z"/>
@@ -230,7 +227,6 @@
     <div class="page-card" id="page-03">
       <img src="03.png" class="bg-img" alt="Ricevimento - Villa delle Rose">
       
-      <!-- Icona geolocalizzazione sul LATO SINISTRO di Trigoria - Roma -->
       <div class="geo-pin" id="pin-villa">
         <svg viewBox="0 0 24 24">
           <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5-2.5-1.12 2.5-2.5 2.5z"/>
@@ -243,7 +239,6 @@
          id="btn-villa-map" 
          title="Apri indicazioni Google Maps"></a>
 
-      <!-- Freccia dorata saliscendi in basso a destra -->
       <a href="#page-04" class="scroll-arrow-br" title="Scorri alla pagina successiva">
         <svg viewBox="0 0 24 24">
           <path d="M7.41 8.59L12 13.17l4.59-4.58L18 10l-6 6-6-6z"/>
