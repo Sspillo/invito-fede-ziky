@@ -13,7 +13,7 @@
 
     body {
       background-color: #121212;
-      font-family: 'Times New Roman', serif;
+      font-family: Arial, sans-serif;
       display: flex;
       justify-content: center;
       align-items: center;
@@ -112,19 +112,19 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      background: rgba(255, 255, 255, 0.85);
+      background: rgba(255, 255, 255, 0.9);
       border: 1px solid #d4af37;
       border-radius: 50%;
-      width: 32px;
-      height: 32px;
+      width: 30px;
+      height: 30px;
       box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
       pointer-events: none;
       animation: pulse-pin 2s infinite;
     }
 
     .geo-pin svg {
-      width: 20px;
-      height: 20px;
+      width: 18px;
+      height: 18px;
       fill: #b8860b;
     }
 
@@ -134,21 +134,21 @@
       100% { transform: scale(1); box-shadow: 0 0 4px rgba(212, 175, 55, 0.4); }
     }
 
-    /* Posizioni esatte per le icone */
+    /* Posizioni sul LATO SINISTRO dei testi */
     #pin-church {
-      bottom: 12.5%;
-      right: 18%;
+      bottom: 12.8%;
+      left: 12%; /* Lato sinistro della scritta Piazzale... */
     }
 
     #pin-villa {
       bottom: 14.2%;
-      right: 22%;
+      left: 27%; /* Lato sinistro della scritta Trigoria - Roma */
     }
 
-    /* Freccia dorata animata saliscendi posizionata in basso a destra */
+    /* Freccia dorata animata alzata per evitare sovrapposizioni su Android */
     .scroll-arrow-br {
       position: absolute;
-      bottom: 25px;
+      bottom: 70px; /* Alzata rispetto al bordo inferiore */
       right: 25px;
       z-index: 10;
       cursor: pointer;
@@ -156,17 +156,17 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      background: rgba(255, 255, 255, 0.6);
-      border: 1px solid rgba(212, 175, 55, 0.8);
+      background: rgba(255, 255, 255, 0.75);
+      border: 1px solid rgba(212, 175, 55, 0.9);
       border-radius: 50%;
-      width: 36px;
-      height: 36px;
-      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+      width: 38px;
+      height: 38px;
+      box-shadow: 0 3px 10px rgba(0, 0, 0, 0.3);
     }
 
     .scroll-arrow-br svg {
-      width: 22px;
-      height: 22px;
+      width: 24px;
+      height: 24px;
       fill: #5c4716;
       animation: bounce-arrow 1.8s infinite;
     }
@@ -205,7 +205,7 @@
     <div class="page-card" id="page-02">
       <img src="02.png" class="bg-img" alt="Cerimonia - Chiesa">
       
-      <!-- SOLO Icona geolocalizzazione vicino a Piazzale dei... -->
+      <!-- Icona geolocalizzazione sul LATO SINISTRO di Piazzale dei... -->
       <div class="geo-pin" id="pin-church">
         <svg viewBox="0 0 24 24">
           <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/>
@@ -230,7 +230,7 @@
     <div class="page-card" id="page-03">
       <img src="03.png" class="bg-img" alt="Ricevimento - Villa delle Rose">
       
-      <!-- SOLO Icona geolocalizzazione vicino a Trigoria - Roma -->
+      <!-- Icona geolocalizzazione sul LATO SINISTRO di Trigoria - Roma -->
       <div class="geo-pin" id="pin-villa">
         <svg viewBox="0 0 24 24">
           <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5-2.5-1.12 2.5-2.5 2.5z"/>
