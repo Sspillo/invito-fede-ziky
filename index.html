@@ -13,7 +13,7 @@
 
     body {
       background-color: #121212;
-      font-family: Arial, sans-serif;
+      font-family: 'Times New Roman', serif;
       display: flex;
       justify-content: center;
       align-items: center;
@@ -59,9 +59,6 @@
       position: absolute;
       cursor: pointer;
       text-decoration: none;
-      display: flex;
-      align-items: center;
-      justify-content: center;
       z-index: 5;
     }
 
@@ -85,14 +82,14 @@
 
     /* 3. Link Mappa Villa */
     #btn-villa-map {
-      bottom: 12%;
+      bottom: 10%;
       left: 10%;
       width: 80%;
-      height: 18%;
+      height: 15%;
       border-radius: 15px;
     }
 
-    /* 4. Pulsanti RSVP (Parteciperò / Non potrò partecipare) */
+    /* 4. Pulsanti RSVP */
     .rsvp-option {
       left: 15%;
       width: 70%;
@@ -108,94 +105,69 @@
       top: 65%;
     }
 
-    /* Icona di geolocalizzazione stilizzata dorata */
-    .geo-icon {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      background: rgba(184, 134, 11, 0.15);
-      border: 1px solid rgba(212, 175, 55, 0.6);
-      box-shadow: 0 0 10px rgba(212, 175, 55, 0.3);
-      border-radius: 50%;
-      padding: 6px;
-      margin-left: 8px;
-      animation: pulse-geo 2s infinite;
-      vertical-align: middle;
-    }
-
-    .geo-icon svg {
-      width: 20px;
-      height: 20px;
-      fill: #d4af37;
-    }
-
-    @keyframes pulse-geo {
-      0% { transform: scale(1); box-shadow: 0 0 5px rgba(212, 175, 55, 0.4); }
-      50% { transform: scale(1.1); box-shadow: 0 0 15px rgba(212, 175, 55, 0.8); }
-      100% { transform: scale(1); box-shadow: 0 0 5px rgba(212, 175, 55, 0.4); }
-    }
-
-    /* Badge indicatore per la mappa */
-    .map-badge {
+    /* Solo Icona di Geolocalizzazione Dorata */
+    .geo-pin {
       position: absolute;
-      background: rgba(255, 255, 255, 0.92);
-      border: 1.5px solid #d4af37;
-      border-radius: 20px;
-      padding: 6px 14px;
-      font-size: 13px;
-      font-weight: bold;
-      color: #5c4716;
+      z-index: 6;
       display: flex;
       align-items: center;
-      gap: 6px;
-      box-shadow: 0 4px 15px rgba(0,0,0,0.15);
+      justify-content: center;
+      background: rgba(255, 255, 255, 0.85);
+      border: 1px solid #d4af37;
+      border-radius: 50%;
+      width: 32px;
+      height: 32px;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
       pointer-events: none;
-      z-index: 4;
-      animation: float-badge 3s ease-in-out infinite;
+      animation: pulse-pin 2s infinite;
     }
 
-    @keyframes float-badge {
-      0%, 100% { transform: translateY(0); }
-      50% { transform: translateY(-4px); }
+    .geo-pin svg {
+      width: 20px;
+      height: 20px;
+      fill: #b8860b;
     }
 
-    #badge-church {
-      bottom: 6.5%;
-      left: 50%;
-      transform: translateX(-50%);
+    @keyframes pulse-pin {
+      0% { transform: scale(1); box-shadow: 0 0 4px rgba(212, 175, 55, 0.4); }
+      50% { transform: scale(1.15); box-shadow: 0 0 12px rgba(212, 175, 55, 0.8); }
+      100% { transform: scale(1); box-shadow: 0 0 4px rgba(212, 175, 55, 0.4); }
     }
 
-    #badge-villa {
-      bottom: 9.5%;
-      left: 50%;
-      transform: translateX(-50%);
+    /* Posizioni esatte per le icone */
+    #pin-church {
+      bottom: 12.5%;
+      right: 18%;
     }
 
-    /* Freccia dorata animata verso il basso */
-    .scroll-arrow {
+    #pin-villa {
+      bottom: 14.2%;
+      right: 22%;
+    }
+
+    /* Freccia dorata animata saliscendi posizionata in basso a destra */
+    .scroll-arrow-br {
       position: absolute;
-      bottom: 20px;
-      left: 50%;
-      transform: translateX(-50%);
+      bottom: 25px;
+      right: 25px;
       z-index: 10;
       cursor: pointer;
       text-decoration: none;
       display: flex;
-      flex-direction: column;
       align-items: center;
-      opacity: 0.85;
-      transition: opacity 0.3s;
+      justify-content: center;
+      background: rgba(255, 255, 255, 0.6);
+      border: 1px solid rgba(212, 175, 55, 0.8);
+      border-radius: 50%;
+      width: 36px;
+      height: 36px;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
     }
 
-    .scroll-arrow:hover {
-      opacity: 1;
-    }
-
-    .scroll-arrow svg {
-      width: 24px;
-      height: 24px;
-      fill: #d4af37;
-      filter: drop-shadow(0px 2px 4px rgba(0,0,0,0.4));
+    .scroll-arrow-br svg {
+      width: 22px;
+      height: 22px;
+      fill: #5c4716;
       animation: bounce-arrow 1.8s infinite;
     }
 
@@ -204,10 +176,10 @@
         transform: translateY(0);
       }
       40% {
-        transform: translateY(-8px);
+        transform: translateY(-6px);
       }
       60% {
-        transform: translateY(-4px);
+        transform: translateY(-3px);
       }
     }
   </style>
@@ -216,80 +188,73 @@
 
   <div class="invitation-container" id="invitation">
 
-    <!-- FILE 01: Copertina -->
+    <!-- PAGE 01: Copertina -->
     <div class="page-card" id="page-01">
-      <img src="01.png" class="bg-img" alt="Copertina Federica & Stefano">
+      <img src="01.png" class="bg-img" alt="Copertina">
       <a href="#page-02" class="hotspot" id="btn-enter" title="Entra nella partecipazione"></a>
       
-      <!-- Freccia dorata animata per scorrere -->
-      <a href="#page-02" class="scroll-arrow" title="Scorri verso il basso">
+      <!-- Freccia dorata saliscendi in basso a destra -->
+      <a href="#page-02" class="scroll-arrow-br" title="Scorri alla pagina successiva">
         <svg viewBox="0 0 24 24">
           <path d="M7.41 8.59L12 13.17l4.59-4.58L18 10l-6 6-6-6z"/>
         </svg>
       </a>
     </div>
 
-    <!-- FILE 02: Cerimonia -->
+    <!-- PAGE 02: Cerimonia -->
     <div class="page-card" id="page-02">
-      <img src="02.png" class="bg-img" alt="Cerimonia - Chiesa dei Santi Pietro e Paolo">
+      <img src="02.png" class="bg-img" alt="Cerimonia - Chiesa">
       
-      <!-- Badge con icona geolocalizzazione affianco all'indirizzo -->
-      <div class="map-badge" id="badge-church">
-        <span>Apri Posizione Google Maps</span>
-        <div class="geo-icon">
-          <svg viewBox="0 0 24 24">
-            <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5-2.5-1.12 2.5-2.5 2.5z"/>
-          </svg>
-        </div>
+      <!-- SOLO Icona geolocalizzazione vicino a Piazzale dei... -->
+      <div class="geo-pin" id="pin-church">
+        <svg viewBox="0 0 24 24">
+          <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/>
+        </svg>
       </div>
 
       <a href="https://maps.google.com/?q=Piazzale+dei+Santi+Pietro+e+Paolo+EUR+Roma" 
          target="_blank" 
          class="hotspot" 
          id="btn-church-map" 
-         title="Apri indicazioni per la Chiesa"></a>
+         title="Apri indicazioni Google Maps"></a>
 
-      <!-- Freccia dorata animata verso il basso -->
-      <a href="#page-03" class="scroll-arrow" title="Scorri alla villa">
+      <!-- Freccia dorata saliscendi in basso a destra -->
+      <a href="#page-03" class="scroll-arrow-br" title="Scorri alla pagina successiva">
         <svg viewBox="0 0 24 24">
           <path d="M7.41 8.59L12 13.17l4.59-4.58L18 10l-6 6-6-6z"/>
         </svg>
       </a>
     </div>
 
-    <!-- FILE 03: Ricevimento -->
+    <!-- PAGE 03: Ricevimento -->
     <div class="page-card" id="page-03">
       <img src="03.png" class="bg-img" alt="Ricevimento - Villa delle Rose">
       
-      <!-- Badge con icona geolocalizzazione per Trigoria - Roma -->
-      <div class="map-badge" id="badge-villa">
-        <span>Trigoria – Roma</span>
-        <div class="geo-icon">
-          <svg viewBox="0 0 24 24">
-            <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5-2.5-1.12 2.5-2.5 2.5z"/>
-          </svg>
-        </div>
+      <!-- SOLO Icona geolocalizzazione vicino a Trigoria - Roma -->
+      <div class="geo-pin" id="pin-villa">
+        <svg viewBox="0 0 24 24">
+          <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5-2.5-1.12 2.5-2.5 2.5z"/>
+        </svg>
       </div>
 
       <a href="https://maps.google.com/?q=Villa+delle+Rose+Trigoria+Roma" 
          target="_blank" 
          class="hotspot" 
          id="btn-villa-map" 
-         title="Apri indicazioni per la Villa"></a>
+         title="Apri indicazioni Google Maps"></a>
 
-      <!-- Freccia dorata animata verso il basso -->
-      <a href="#page-04" class="scroll-arrow" title="Scorri per confermare la presenza">
+      <!-- Freccia dorata saliscendi in basso a destra -->
+      <a href="#page-04" class="scroll-arrow-br" title="Scorri alla pagina successiva">
         <svg viewBox="0 0 24 24">
           <path d="M7.41 8.59L12 13.17l4.59-4.58L18 10l-6 6-6-6z"/>
         </svg>
       </a>
     </div>
 
-    <!-- FILE 04: RSVP / Conferma Presenza -->
+    <!-- PAGE 04: RSVP -->
     <div class="page-card" id="page-04">
       <img src="04.png" class="bg-img" alt="Conferma Presenza">
       
-      <!-- Sostituisci "393331234567" con il vostro numero di telefono di riferimento -->
       <a href="https://wa.me/393331234567?text=Ciao!%20Confermo%20con%20piacere%20la%20mia%20presenza%20al%20vostro%20matrimonio!" 
          target="_blank" 
          class="hotspot rsvp-option" 
